@@ -4,5 +4,9 @@
 # Configuration file
 .env
 
-# Python cache
+# Cache
 __pycache__
+.mypy_cache
+
+# Test
+test.xlsx

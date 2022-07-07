@@ -1,23 +1,23 @@
 import typer
 
-from src.util import get_information, Worker
+from src.schema import FileType
+from src.util import Worker, get_information
 
-def app():
-    """
-    
-    """
+
+def app() -> None:
+    """ """
     typer.echo("깃헙 조직 초대를 시작합니다!")
     information = get_information()
     worker = Worker(information=information)
-    
-    if information.file_type == "csv":
+
+    if information.file_type == str(FileType.CSV.value):
         worker.write_csv()
-    
-    elif information.file_type == "excel":
-        worker.write_csv()
-    
-    print()
-    
+
+    elif information.file_type == str(FileType.EXCEL.value):
+        worker.write_excel()
+
+    typer.echo("깃헙 조직 초대가 끝났습니다!")
+
 
 if __name__ == "__main__":
     typer.run(app)
