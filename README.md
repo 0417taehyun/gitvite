@@ -143,14 +143,23 @@ poetry run python -m src.main
 FILE_TYPE=
 FILE_PATH=
 
-SHEET_NAME=
 GITHUB_ACCOUNT_COLUMN_NAME=
 GITHUB_ORGANIZATION_TEAMS_COLUMN_NAME=
 
-GITHUB_ACCOUNT_TOKEN=
+GITHUB_ACCESS_TOKEN=
 GITHUB_ORGANIZATION_NAME=
 GITHUB_ORGANIZATION_TEAM_NAME=
 ```
+
+이때 각각의 항목은 아래와 같은 의미를 같습니다
+
+- `FILE_TYPE` : 대상이되는 파일의 종류입니다. 현재 `1` 은 `CSV` , `2` 는 `EXCEL` 파일을 의미합니다.
+- `FILE_PATH` : 대상이 되는 파일의 경로입니다. 이때 절대경로 및 상대경로 모두 가능합니다.
+- `GITHUB_ACCOUNT_COLUMN_NAME` : 파일 속 사용자들의 깃헙 계정이 저장되어 있는 컬럼명입니다.
+- `GITHUB_ORGANIZATION_TEAMS_COLUMN_NAME` : 파일 속 사용자를 초대하려는 깃헙 조직 정보가 저장되어 있는 컬럼명입니다.
+- `GITHUB_ACCESS_TOKEN` : 깃헙 서비스에서 발급 받은 액세스 토큰 값입니다.
+- `GITHUB_ORGANIZATION_NAME` : 사용자를 초대하려는 깃헙 조직의 이름입니다.
+- `GITHUB_ORGANIZATION_TEAM_NAME` : 사용자를 초대하려는 깃헙 조직의 팀 이름입니다.
 
 만약 `.env` 파일이 존재하지 않거나 필수적으로 요구가 되는데 입력되지 않은 값이 존재하면 아래와 같이 터미널에서 대화형으로 값을 입력합니다.
 
